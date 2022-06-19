@@ -7,5 +7,6 @@ export default {
 <template>
   <div>
     <HeroHeader />
+    <HeroBody />
   </div>
 </template>

@@ -5,4 +5,7 @@ export default {
 </script>
 
 <template>
+  <div>
+    <HeroHeader />
+  </div>
 </template>

@@ -6,6 +6,8 @@ export default {
 
 <template>
   <v-row class="background-image" align="end">
+    <!-- <v-switch hint="Theme" dense hide-details="auto" v-model="$vuetify.theme.dark" -->
+      <!-- :label="$vuetify.theme.dark ? 'Dark' : 'Light'"></v-switch> -->
     <v-col class="px-0">
       <v-container>
         <h2 class="text-h2 pb-4">Now Streaming</h2>

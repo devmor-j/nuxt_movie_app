@@ -2,7 +2,6 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   target: 'static',
-  ssr: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - nuxt_movie_app',

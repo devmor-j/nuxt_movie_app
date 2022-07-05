@@ -48,9 +48,11 @@ export default {
                 </small>
               </div>
             </v-img>
+
             <v-card-title class="break-word">{{ movie.title }} <span v-if="movie.title !== movie.original_title">{{
                 movie.original_title
             }}</span></v-card-title>
+
             <v-card-subtitle>
               {{ new Date(movie.release_date).toLocaleDateString('default', {
                   day: 'numeric',
@@ -58,11 +60,17 @@ export default {
                   year: "numeric"
                 })
               }} </v-card-subtitle>
+
             <v-card-text>
               {{ movie.overview }}
             </v-card-text>
+
             <v-card-actions>
-              <v-btn class="purple--text" text outlined>Read More</v-btn>
+              <v-btn class="purple--text" text outlined link nuxt>
+                <NuxtLink :to="{ name: 'movies-movie', params: { movie: JSON.stringify(movie) } }">
+                  Read More
+                </NuxtLink>
+              </v-btn>
               <!-- <v-spacer></v-spacer> -->
               <!-- <v-btn icon @click="show = !show">
               <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>

@@ -5,7 +5,7 @@ export default {
     return {
       popularMovies: [],
       upcomingMovies: [],
-      show: false,
+      // show: false,
     }
   },
 
@@ -13,17 +13,17 @@ export default {
     const ctx = this.$nuxt.context;
 
     const popularMoviesUrl = `${ctx.$config.baseUrl}/movie/popular?api_key=${ctx.$config.apiKey}`;
-    const upcomingMoviesUrl = `${ctx.$config.baseUrl}/movie/upcoming?api_key=${ctx.$config.apiKey}`;
+    // const upcomingMoviesUrl = `${ctx.$config.baseUrl}/movie/upcoming?api_key=${ctx.$config.apiKey}`;
 
     const get = async (fullUrl) => await ctx.$axios.$get(fullUrl)
 
     await Promise.allSettled([
       get(popularMoviesUrl),
-      get(upcomingMoviesUrl)
+      // get(upcomingMoviesUrl)
     ])
       .then((data) => {
         this.popularMovies = data[0].value.results;
-        this.upcomingMovies = data[1].value.results;
+        // this.upcomingMovies = data[1].value.results;
       });
   }
 }
@@ -67,8 +67,7 @@ export default {
 
             <v-card-actions>
               <v-btn class="purple--text" text outlined link nuxt>
-                <NuxtLink
-                  :to="{ name: 'movies-movietitle', params: { movietitle: movie.original_title, movie: JSON.stringify(movie) } }">
+                <NuxtLink prefetch :to="{ name: 'movies-movieid', params: { movieid: movie.id } }">
                   Read More
                 </NuxtLink>
               </v-btn>

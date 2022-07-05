@@ -7,7 +7,16 @@ export default {
   },
 
   async fetch() {
-    this.movie = await JSON.parse(this.$nuxt.context.params.movie)
+    const ctx = this.$nuxt.context;
+
+    const movieUrl = `${ctx.$config.baseUrl}/movie/${ctx.params.movieid}?api_key=${ctx.$config.apiKey}`;
+
+    const get = async (fullUrl) => await ctx.$axios.$get(fullUrl)
+
+    await get(movieUrl)
+      .then((data) => {
+        this.movie = data;
+      });
   }
 }
 </script>

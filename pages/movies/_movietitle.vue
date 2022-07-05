@@ -20,7 +20,7 @@ export default {
 
           <v-col sm="6">
             <v-img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" max-height="90vh" alt="movie-poster"
-              contain="true">
+              :contain="true">
             </v-img>
           </v-col>
 

@@ -67,7 +67,8 @@ export default {
 
             <v-card-actions>
               <v-btn class="purple--text" text outlined link nuxt>
-                <NuxtLink :to="{ name: 'movies-movie', params: { movie: JSON.stringify(movie) } }">
+                <NuxtLink
+                  :to="{ name: 'movies-movietitle', params: { movietitle: movie.original_title, movie: JSON.stringify(movie) } }">
                   Read More
                 </NuxtLink>
               </v-btn>

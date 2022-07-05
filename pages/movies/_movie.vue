@@ -71,6 +71,14 @@ export default {
                 Language:&nbsp;
                 <span class="font-weight-bold text-uppercase">{{ movie.original_language }}</span>
               </v-chip>
+
+              <v-chip :class="movie.popularity > 3000 ? 'green--text' : 'grey--text'" outlined label>
+                <v-icon small left>
+                  mdi-fire
+                </v-icon>
+                Popularity:&nbsp;
+                <span class="font-weight-bold">{{ movie.popularity }}</span>
+              </v-chip>
             </v-chip-group>
 
           </v-col>
